@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_stripe/flutter_stripe.dart';
+//import 'package:http/http.dart' as http;
 
 import '../data/firebase_helper.dart';
-
 
 class LoginScreen extends StatelessWidget {
   final _emailController = TextEditingController();
@@ -85,6 +86,22 @@ class LoginScreen extends StatelessWidget {
                   }
                 },
                 child: const Text('Login'),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  foregroundColor:
+                      MaterialStateProperty.all<Color>(Colors.blue),
+                ),
+                
+                onPressed: () {},// тут чет надо
+                
+                child: const Text(
+                  'Pay',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
               TextButton(
                 onPressed: () {

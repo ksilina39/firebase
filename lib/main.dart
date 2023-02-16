@@ -3,11 +3,14 @@ import 'package:firebase/screens/sign_up.dart';
 import 'package:firebase/screens/user.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:http/http.dart' as http;
 import 'data/firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Stripe.publishableKey = "pk_test_51MbnZPBbdsc0ypZ9vH8VSxEsCVg2uiele5oiSXT0GCcljapnoiTyrAkxDXYM4A5nrA77iAlz46hmBgPzCKmbiwj900R1wi1aCk";
+  await Stripe.instance.applySettings();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
 );
